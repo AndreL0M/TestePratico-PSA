@@ -1,0 +1,802 @@
+Cenário: 001-LOGIN
+
+Casos de testes: CT01.01-Login válido com CPF e senha
+
+Dado que o usuário esteja na tela de login
+E preenche os campos CPF, senha com dados válidos
+Quando efetuar Login
+Então o usuário devera ser direcionado para a página de inicial
+
+Resultado: PASSOU
+
+
+Cenário: 001-LOGIN
+
+Casos de testes: CT01.02-Login com CPF inválido
+
+Dado que o usuário esteja na tela de login
+E preenche o campo CPF com um CPF não cadastrado
+Quando efetuar Login
+Então o sistema deve exibir mensagem de erro, "CPF ou senha inválidos. Preencha novamente."
+
+Resultado: PASSOU
+
+
+Cenário: 001-LOGIN
+
+Casos de testes: CT01.03-Login com CPF válido e senha inválido
+
+Dado que o usuário esteja na tela de login
+E preenche um usuário com CPF  cadastrado
+E senha inválida
+Quando efetuar Login
+Então o sistema deve exibir mensagem de erro "CPF ou senha inválidos. Preencha novamente."
+
+Resultado: PASSOU
+
+
+Cenário: 001-LOGIN
+
+Casos de testes: CT01.04-Login com CPF em branco
+
+Dado que o usuário esteja na tela de login 
+E não preenche o campo de CPF 
+E preencher a senha com uma senha válida 
+Quando efetuar Login
+Então o sistema deve exibir mensagem de erro, "CPF ou senha inválidos. Preencha novamente."
+
+Resultado: PASSOU
+
+
+Cenário: 001-LOGIN
+
+Casos de testes: CT01.05-Login com senha em branco
+
+Dado que o usuário esteja na tela de login 
+E preenche o campo de CPF com um CPF válido
+E não preenche a senha 
+Quando efetuar Login
+Então o sistema deve exibir mensagem de erro, "CPF ou senha inválidos. Preencha novamente."
+
+Resultado: PASSOU
+
+
+Cenário: 001-LOGIN
+
+Casos de testes: CT01.06-Central de ajuda na tela de loguin
+
+Dado que o usuário esteja na tela de login 
+Quando clicar em Central de ajuda
+Então o usuário será direcionado para a página de perguntas frequentes 
+
+Resultado: PASSOU
+
+
+Cenário: 001-LOGIN
+
+Casos de testes: CT01.07-Criar conta
+
+Dado que o usuário esteja na tela de login 
+Quando clicar em criar conta
+Então o usuário será direcionado para a página de registro
+
+Resultado: PASSOU
+
+
+Cenário: 001-LOGIN
+
+Casos de testes: CT01.08-Mantenha-me conectado
+
+Dado que o usuário esteja na tela de login
+E preenche os campos CPF e senha com dados válidos 
+E clicar em mantenha-me conectado
+Quando efetuar Login
+Então o usuário manterá a sessão sempre ativa
+
+Resultado: PASSOU
+
+
+Cenário: 001-LOGIN
+
+Casos de testes: CT01.09-Esqueci a senha
+
+Dado que o usuário esteja na tela de login
+Quando clicar em esqueci minha senha
+Então o usuário devera ser direcionado para a página recuperar senha
+
+Resultado: PASSOU
+
+
+Cenário: 002-REGISTRAR
+
+Casos de testes: CT02.01-Preenchimento correto de todos os campos
+
+Dado que o usuário está na tela de cadastro
+E o usuário preenche todos os campos corretamente
+Quando clica no botão "Cadastrar"
+Então o sistema exibe uma mensagem de confirmação de cadastro
+
+Resultado: PASSOU
+
+
+Cenário: 002-REGISTRAR
+
+Casos de testes: CT02.02-Preenchimento incorreto do campo CPF
+
+Dado que o usuário está na tela de cadastro
+E o usuário preenche o campo CPF com um valor incorreto
+Quando clica no botão "Cadastrar"
+Então o sistema exibe uma mensagem de erro informando que o CPF é inválido
+
+Resultado: PASSOU
+
+
+Cenário: 002-REGISTRAR
+
+Casos de testes: CT02.03-Preenchimento incorreto do campo Email
+
+Dado que o usuário está na tela de cadastro
+E o usuário preenche o campo Email com um valor incorreto, por ex sem o "@" ou ".com"
+Quando clica no botão "Cadastrar"
+Então o sistema exibe uma mensagem de erro informando que o Email é inválido
+
+Resultado: PASSOU
+
+
+Cenário: 002-REGISTRAR
+
+Casos de testes: CT02.04-Senha e Confirmar Senha diferentes
+
+Dado que o usuário está na tela de cadastro
+E o usuário preenche o campo Senha e Confirmar Senha com valores diferentes
+Quando clica no botão "Cadastrar"
+Então o sistema exibe uma mensagem de erro informando que a confirmação de senha falhou
+
+Resultado: PASSOU
+
+
+Cenário: 002-REGISTRAR
+
+Casos de testes: CT02.05-Campos obrigatórios não preenchidos
+
+Dado que o usuário está na tela de cadastro
+E o usuário não preenche todos os campos obrigatórios
+Quando clica no botão "Cadastrar"
+Então o sistema exibe uma mensagem de erro informando que os campos obrigatórios não foram preenchidos
+
+Resultado: PASSOU
+
+
+Cenário: 002-REGISTRAR
+
+Casos de testes: CT02.06-Preenchimento incorreto do campo CEP
+
+Dado que o usuário está na tela de cadastro
+E o usuário preenche o campo CEP com um valor inválido
+Quando clica no botão "Buscar Endereço"
+Então o sistema exibe uma mensagem de erro informando que o CEP é inválido
+
+Resultado: PASSOU
+
+
+Cenário: 002-REGISTRAR
+
+Casos de testes: CT02.07-Email já cadastrado
+
+Dado que o usuário está na tela de cadastro
+E o usuário preenche o campo Email com um valor que já foi cadastrado anteriormente
+Quando clica no botão "Cadastrar"
+Então o sistema exibe uma mensagem de erro informando que o email já está cadastrado
+
+Resultado: PASSOU
+
+
+Cenário: 002-REGISTRAR
+
+Casos de testes: CT02.08-Data de nascimento inválida
+
+Dado que o usuário está na tela de cadastro
+E o usuário preenche o campo Data de Nascimento com um valor inválido, como uma data futura ou uma data com formato inválido
+Quando clica no botão "Cadastrar"
+Então o sistema exibe uma mensagem de erro informando que a data de nascimento é inválida
+
+Resultado: PASSOU
+
+
+Cenário: 002-REGISTRAR
+
+Casos de testes: CT02.09-Senha muito curta
+
+Dado que o usuário está na tela de cadastro
+E o usuário preenche o campo Senha com uma senha que contém menos de 8 caracteres
+Quando clica no botão "Cadastrar"
+Então o sistema exibe uma mensagem de erro informando que a senha é muito curta
+
+Resultado: PASSOU
+
+
+Cenário: 003-RECUPERAR SENHA
+
+Casos de testes: CT03.01-Recuperar senha caso válido
+
+Dado que o usuário esteja na tela de recuperar senha 
+E digitar o e-mail válido
+E confirmar o e-mail válido
+Quando clicar em enviar e-mail de recuperação
+Então o usuário receberá uma mensagem para concluir a redefinição da sua senha
+
+Resultado: PASSOU
+
+
+Cenário: 003-RECUPERAR SENHA
+
+Casos de testes: CT03.02-Recuperar senha caso inválido
+
+Dado que o usuário esteja na tela de recuperar senha 
+E digitar o e-mail inválido
+E confirmar o e-mail inválido
+Quando clicar em enviar e-mail de recuperação
+Então o usuário receberá uma mensagem "Este e-mail não está cadastrado"
+
+Resultado: PASSOU
+
+Cenário: 003-RECUPERAR SENHA
+
+Casos de testes: CT03.03-Recuperar senha campo em branco
+
+Dado que o usuário esteja na tela de recuperar senha 
+E deixar os campos de e-mail em branco
+Quando clicar em enviar e-mail de recuperação
+Então o usuário receberá uma mensagem "Este campo é de preenchimento obrigatório."
+
+Resultado: PASSOU
+
+
+Cenário: 003-RECUPERAR SENHA
+
+Casos de testes: CT03.04-CT03.04-Recuperação com email e confirmação de email diferentes
+
+Dado que o usuário esteja na tela de recuperar senha 
+E digitar o e-mail 
+E confirmar o e-mail com um email diferente do primeiro
+Quando clicar em enviar e-mail de recuperação
+Então o usuário receberá uma mensagem "Os e-mails não estão iguais. Preencha novamente."
+
+Resultado: PASSOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.01-Pesquisa
+
+Dado que o usuário esteja na tela inicial
+Quando pesquisar algo na barra de pesquisa "O que você quer fazer hoje?"
+Então o usuário será direcionado para a página de dúvidas "Central de ajuda"
+
+Resultado: FALHOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.02-Acessibilidade
+
+Dado que o usuário esteja na tela inicial 
+E clicar em Acessibilidade 
+Quando clicar em aumentar a fonte
+Então a fonte deverá ter seu tamanho aumentado
+
+Resultado: FALHOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.02.1-Acessibilidade
+
+Dado que o usuário esteja na tela inicial
+E clicar em Acessibilidade 
+Quando clicar em tamanho de fonte padrão
+Então a fonte volta ao tamanho original
+
+Resultado: PASSOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.02.2-Acessibilidade
+
+Dado que o usuário esteja na tela inicial
+E clicar em Acessibilidade 
+Quando clicar em alto contraste 
+Então a página deve ficar em preto e branco
+
+Resultado: FALHOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.03.-Sino
+
+Dado que o usuário esteja na tela inicial 
+Quando clicar no ícone de sino 
+Então o usuário deverá ser direcionado para a tela de notificações 
+
+Resultado: PASSOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.04-Dados de usuário
+
+Dado que o usuário esteja na tela inicial
+Quando clicar no ícone do usuário
+Então o sistema deve abrir um balão com algumas informações e ações de usuario
+
+Resultado: PASSOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.05-Agendamento
+
+Dado que o usuário esteja na tela inicial
+Quando clicar em Agendamento
+Então o usuário deverá ser direcionado para a tela de agendamento
+
+Resultado: PASSOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.05.1-Agendamento (hiperlink)
+
+Dado que o usuário esteja na tela inicial 
+Quando clicar no hiper link do balão Agendamento
+Então o usuário deverá ser direcionado para a tela de agendamento
+
+Resultado: FALHOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.06-Central de ajuda
+
+Dado que o usuário esteja na tela inicial 
+Quando clicar em Central de ajuda 
+Então o usuário deverá ser direcionado para a tela de perguntas frequentes
+
+Resultado: PASSOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.06.1-Central de ajuda (hiperlink)
+
+Dado que o usuário esteja na tela inicial 
+Quando clicar no hiper link do balão Central de ajuda
+Então o usuário deverá ser direcionado para a tela de Central de ajuda
+
+Resultado: FALHOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.07-Consulta de processos
+
+Dado que o usuário esteja na tela inicial 
+Quando clicar em Consulta de processos
+Então o usuário deverá ser direcionado para a tela de consulta de processos
+
+Resultado: PASSOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.07.1-Consulta de processos (hiperlink)
+
+Dado que o usuário esteja na tela inicial 
+Quando clicar no hiper link do balão Consulta de processos
+Então o usuário deverá ser direcionado para a tela de Consulta de processos
+
+Resultado: FALHOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.08-Licenciamento
+
+Dado que o usuário esteja na tela inicial 
+Quando clicar em Licenciamento
+Então o usuário deverá ser direcionado para a tela de Licenciamento
+
+Resultado: FALHOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.08.1-Licenciamento (hiperlink)
+
+Dado que o usuário esteja na tela inicial 
+Quando clicar no hiper link do balão Licenciamento
+Então o usuário deverá ser direcionado para a tela de Licenciamento
+
+Resultado: FALHOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.09-Protocolo
+
+Dado que o usuário esteja na tela inicial
+Quando clicar em Protocolo
+Então o usuário deverá ser direcionado para a tela de Protocolo
+
+Resultado: PASSOU
+
+
+Cenário: 004-TELA INICIAL
+
+Casos de testes: CT04.09.1-Protocolo (hiperlink)
+
+Dado que o usuário esteja na tela inicial 
+Quando clicar no hiper link do balão Protocolo
+Então o usuário deverá ser direcionado para a tela de Protocolo
+
+Resultado: FALHOU
+
+
+Cenário: 005-TELA DE AGENDAMENTO
+
+Casos de testes: CT05.01-Criar uma nova agenda
+
+Dado que o usuário está na tela de agendamento
+E clica no botão de nova agenda
+E preenche todos os campos obrigatórios
+Quando o usuário clica em salvar
+Então a agenda é criada com sucesso e a mensagem de confirmação é exibida
+
+Resultado: PASSOU
+
+
+Cenário: 005-TELA DE AGENDAMENTO
+
+Casos de testes: CT05.02-Limpar a busca
+
+Dado que o usuário está na tela de agendamento
+E o usuário digita um termo na barra de pesquisa
+Quando o usuário clica no botão de limpar busca
+Então a barra de pesquisa fica vazia
+
+Resultado: PASSOU
+
+
+Cenário: 005-TELA DE AGENDAMENTO
+
+Casos de testes: CT05.03-Filtro à barra de pesquisa
+
+Dado que o usuário está na tela de agendamento
+E o usuário clica no botão de adicionar filtro à barra de pesquisa
+E o usuário seleciona um filtro
+Quando o usuário clica em aplicar
+Então a lista de resultados é atualizada com base no filtro selecionado
+
+Resultado: FALHOU
+
+
+Cenário: 005-TELA DE AGENDAMENTO
+
+Casos de testes: CT05.04-Ver mais serviços
+
+Dado que o usuário está na tela de agendamento
+Quando clica no botão de mais serviços
+Então o usuario deve voltar para a tela inicial
+
+Resultado: PASSOU
+
+
+Cenário: 005-TELA DE AGENDAMENTO
+
+Casos de testes: CT05.05-Abrir processos
+
+Dado que o usuário está na tela de agendamento
+Quando o usuário clica no botão de abrir processos
+Então a tela de abertura de processos é exibida
+
+Resultado: PASSOU
+
+
+Cenário: 005-TELA DE AGENDAMENTO
+
+Casos de testes: CT05.06-Ver meus processos
+
+Dado que o usuário está na tela de agendamento
+E o usuário clica no botão de meus processos
+Quando a lista de meus processos é exibida
+Então somente os processos do usuário são exibidos
+
+Resultado: PASSOU
+
+
+Cenário: 005-TELA DE AGENDAMENTO
+
+Casos de testes: CT05.07-Ver processos arquivados
+
+Dado que o usuário está na tela de agendamento
+Quando o usuário clica no botão de processos arquivados
+Então a lista de processos arquivados é exibida
+
+
+Resultado: PASSOU
+
+
+Cenário: 006-TELA CENTRAL DE AJUDA
+
+Casos de testes: CT06.01-Acessar as perguntas frequentes
+
+Dado que o usuário está na tela de central de ajuda
+Quando o usuário clica no botão de perguntas frequentes
+Então a lista de perguntas frequentes é exibida
+
+Resultado: PASSOU
+
+
+Cenário: 006-TELA CENTRAL DE AJUDA
+
+Casos de testes: CT06.02-Enviar mensagem para o suporte
+
+Dado que o usuário está na tela de central de ajuda
+E o usuário clica no botão de fale conosco
+E o usuário preenche os campos obrigatórios do formulário
+Quando o usuário clica em enviar
+Então a mensagem é enviada com sucesso e a mensagem de confirmação é exibida
+
+Resultado: PASSOU
+
+
+Cenário: 006-TELA CENTRAL DE AJUDA
+
+Casos de testes: CT06.03-Consultar a central de ajuda
+
+Dado que o usuário está na tela de central de ajuda
+E o usuário digita um termo na barra de pesquisa "Como podemos ajudar?"
+Quando o usuário clica no botão de consulta
+Então a lista de resultados correspondentes ao termo de busca é exibida
+
+Resultado: FALHOU
+
+
+Cenário: 006-TELA CENTRAL DE AJUDA
+
+Casos de testes: CT06.04-Ver dúvidas gerais
+
+Dado que o usuário está na tela de central de ajuda
+Quando o usuário clica na aba de dúvidas gerais
+Então uma lista de dúvidas gerais é exibida
+
+Resultado: PASSOU
+
+
+Cenário: 006-TELA CENTRAL DE AJUDA
+
+Casos de testes: CT06.05- Ver órgão de teste
+
+Dado que o usuário está na tela de central de ajuda
+Quando o usuário clica na aba de órgão de teste
+Então uma lista de informações sobre o órgão de teste é exibida
+
+Resultado: PASSOU
+
+
+Cenário: 006-TELA CENTRAL DE AJUDA
+
+Casos de testes: CT06.06-Ver órgão geral
+
+Dado que o usuário está na tela de central de ajuda
+Quando o usuário clica na aba de órgão geral
+Então uma lista de informações sobre o órgão geral é exibida
+
+Resultado: PASSOU
+
+
+Cenário: 007-TELA CONSULTA DE PROCESSOS
+
+Casos de testes: CT07.01-Acessar as perguntas frequentes
+
+Dado que o usuário está na tela de consulta de processos
+Quando o usuário clica no botão de perguntas frequentes
+Então a lista de perguntas frequentes é exibida
+
+Resultado: PASSOU
+
+
+Cenário: 007-TELA CONSULTA DE PROCESSOS
+
+Casos de testes: CT07.02- Enviar mensagem para o suporte
+
+Dado que o usuário está na tela de consulta de processos
+E o usuário clica no botão de fale conosco
+E o usuário preenche os campos obrigatórios do formulário
+Quando clica em enviar
+Então a mensagem é enviada com sucesso e a mensagem de confirmação é exibida
+
+Resultado: PASSOU
+
+
+
+Cenário: 007-TELA CONSULTA DE PROCESSOS
+
+Casos de testes: CT07.03-Realizar consulta de processo
+
+Dado que o usuário está na tela de consulta de processos
+E o usuário preenche o número do processo
+Quando clica no botão de consultar processo
+Então as informações do processo são exibidas
+
+Resultado: PASSOU
+
+
+Cenário: 007-TELA CONSULTA DE PROCESSOS
+
+Casos de testes: CT07.04-Validar documento
+
+Dado que o usuário está na tela de consulta de processos
+E o usuário clica no botão de validar documento
+Quando seleciona o documento a ser validado
+Então a validação do documento é realizada
+E o resultado da validação é exibido
+
+Resultado: PASSOU
+
+
+
+Cenário: 007-TELA CONSULTA DE PROCESSOS
+
+Casos de testes: CT07.05-Validar mídia
+
+Dado que o usuário está na tela de consulta de processos
+Quando o usuário clica no botão de validar mídia
+E seleciona a mídia a ser validada
+Então a validação da mídia é realizada e o resultado da validação é exibido
+
+Resultado: PASSOU
+
+
+
+Cenário: 007-TELA CONSULTA DE PROCESSOS
+
+Casos de testes: CT07.06-Realizar consulta por palavra-chave
+
+Dado que o usuário está na tela de consulta de processos
+Quando o usuário digita uma palavra-chave na barra de pesquisa "Como podemos ajudar?"
+E clica no botão de consulta
+Então os resultados correspondentes à palavra-chave são exibidos
+
+Resultado: FALHOU
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+USUARIO INTERNO
+
+Cenário: 008-AGENDAMENTO
+
+Casos de testes: CT08.01-Cadastrar agenda
+
+Dado que o usuário está logado na aplicação
+E o usuário clica no botão de cadastrar agenda
+E preenche os campos obrigatórios
+Quando clica em salvar
+Então a agenda é cadastrada com sucesso
+
+Resultado: PASSOU
+
+
+
+Cenário: 008-AGENDAMENTO
+
+Casos de testes: CT08.02-Editar agenda
+
+Dado que o usuário está logado na aplicação
+E possui uma agenda cadastrada
+E o usuário clica no botão de editar agenda
+E realiza as alterações necessárias
+Quando clica em salvar
+Então a agenda é atualizada com sucesso
+
+Resultado: PASSOU
+
+
+
+Cenário: 008-AGENDAMENTO
+
+Casos de testes: CT08.03-Desativar agenda
+
+Dado que o usuário está logado na aplicação
+E possui uma agenda ativa
+Quando o usuário clica no botão de desativar agenda
+Então a agenda é desativada com sucesso
+
+Resultado: PASSOU
+
+
+
+Cenário: 008-AGENDAMENTO
+
+Casos de testes: CT08.04-Ativar agenda
+
+Dado que o usuário está logado na aplicação
+E possui uma agenda desativada
+Quando o usuário clica no botão de ativar agenda
+Então a agenda é ativada com sucesso
+
+Resultado: PASSOU
+
+
+
+Cenário: 008-AGENDAMENTO
+
+Casos de testes: CT08.05-Agendar atendimento
+
+Dado que o usuário está logado na aplicação
+E possui uma agenda ativa
+E o usuário clica no botão de agendar atendimento
+E preenche os campos obrigatórios
+Quando clica em salvar
+Então o atendimento é agendado com sucesso
+
+Resultado: PASSOU
+
+
+
+Cenário: 008-AGENDAMENTO
+
+Casos de testes: CT08.06-Reagendar atendimento
+
+Dado que o usuário está logado na aplicação
+E possui um atendimento agendado
+E o usuário clica no botão de reagendar atendimento
+E realiza as alterações necessárias
+Quando clica em salvar
+Então o atendimento é reagendado com sucesso
+
+Resultado: PASSOU
+
+
+
+Cenário: 008-AGENDAMENTO
+
+Casos de testes: CT08.07-Desmarcar atendimento
+
+Dado que o usuário está logado na aplicação
+E possui um atendimento agendado
+Quando o usuário clica no botão de desmarcar atendimento
+Então o atendimento é desmarcado com sucesso
+
+Resultado: PASSOU
+
+
+
+Cenário: 008-AGENDAMENTO
+
+Casos de testes:CT08.08- Cadastrar agenda com campos obrigatórios em branco 
+
+Dado que o usuário está logado na aplicação
+E o usuário clica no botão de cadastrar agenda
+E deixa campos obrigatórios em branco
+Quando clica em salvar
+Então a aplicação exibe mensagem de erro indicando que é necessário preencher os campos obrigatórios
+
+Resultado: PASSOU
+
+
+
+Cenário: 008-AGENDAMENTO
+
+Casos de testes: CT08.09-Editar agenda com campos inválidos
+
+Dado que o usuário está logado na aplicação
+E possui uma agenda cadastrada
+E o usuário clica no botão de editar agenda
+E preenche com informações inválidas
+Quando clica em salvar
+Então a aplicação exibe mensagem de erro indicando que é necessário preencher com informações válidas
+
+Resultado: PASSOU
